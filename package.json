@@ -19,5 +19,8 @@
   "homepage": "https://github.com/lucas-stellet/pipedrive-bling-api#readme",
   "devDependencies": {
     "standard": "^14.3.4"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
   }
 }
