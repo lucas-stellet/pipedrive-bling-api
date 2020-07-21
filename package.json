@@ -1,0 +1,23 @@
+{
+  "name": "pipedrive-bling-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucas-stellet/pipedrive-bling-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lucas-stellet/pipedrive-bling-api/issues"
+  },
+  "homepage": "https://github.com/lucas-stellet/pipedrive-bling-api#readme",
+  "devDependencies": {
+    "standard": "^14.3.4"
+  }
+}
