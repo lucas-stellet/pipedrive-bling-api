@@ -4,11 +4,11 @@ module.exports = {
   async getDeals (req, res) {
     try {
       const deals = await getAllDeals()
-      if (!deals) {
+      if (!deals.data) {
         return res.status(200).json({ response: 'No deals.' })
       }
-
-      return res.status(200).json({ data: deals })
+      const { data } = deals
+      return res.status(200).json({ data })
     } catch (error) {
       return res.status(500).json({ error: error.message })
     }
@@ -20,8 +20,8 @@ module.exports = {
       if (!deals.data) {
         return res.status(200).json({ response: 'No deals with this status.' })
       }
-
-      return res.status(200).json({ data: deals.data })
+      const { data } = deals
+      return res.status(200).json({ data })
     } catch (error) {
       return res.status(500).json({ error: error.message })
     }
