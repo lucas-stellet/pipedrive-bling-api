@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 mongoose.connect(
-  'mongodb+srv://lustepe:<cpnoye11dZqFt9XA>@linkapi.zgb5y.gcp.mongodb.net/<dbname>?retryWrites=true&w=majority',
+  process.env.DB_URI,
   {
     useMongoClient: true
   }
