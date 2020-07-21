@@ -21,6 +21,7 @@
     "standard": "^14.3.4"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "express": "^4.17.1",
     "moment": "^2.27.0",
     "mongoose": "^5.9.25"
