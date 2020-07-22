@@ -7,7 +7,6 @@ module.exports = {
 
       if (Object.keys(orders) === 'erros') {
         const { cod, msg } = orders.erros[0].erro
-        console.log(orders.erros[0])
         return res.status(200).json({
           response: {
             cod,
