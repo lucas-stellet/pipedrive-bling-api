@@ -1,13 +1,15 @@
 const { getDealsProducts } = require('../api/components/deals/services/index')
+const { convertDate, convertToXML } = require('../helpers/convertData')
 
 exports.serializeDeals = (deals) => {
   const formattedDeals = deals.map((deal) => {
     return {
+      data: convertDate(deal.add_time),
       id: deal.id,
-      client: {
-        name: deal.person_id.name,
+      cliente: {
+        nome: deal.person_id.name,
         email: deal.person_id.email[0].value,
-        phone: deal.person_id.phone[0].value
+        fone: deal.person_id.phone[0].value
       }
     }
   })
@@ -20,18 +22,28 @@ exports.saveProductsOnDeals = async (deals) => {
 
   for (let i = 0; i < dealsIds.length; i++) {
     const { data } = await getDealsProducts(dealsIds[i])
-    data.forEach(item => {
-      deals[i] = {
-        ...deals[i],
-        items: {
-          id: item.id,
-          description: item.name,
-          quantity: item.quantity,
-          unity_value: item.item_price
+    const items = data.map(item => {
+      return {
+        item: {
+          codigo: item.id,
+          descricao: item.name,
+          qtde: item.quantity,
+          vlr_unit: item.item_price
         }
       }
     })
+
+    deals[i] = {
+      pedido: {
+        ...deals[i],
+        itens: items
+      }
+    }
   }
 
   return deals
+}
+
+exports.convertToBlingOrder = (deal) => {
+  return convertToXML(deal)
 }
