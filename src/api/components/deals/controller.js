@@ -4,7 +4,7 @@ module.exports = {
   async getDeals (req, res) {
     try {
       const deals = await getAllDeals()
-      if (!deals.data) {
+      if (!deals) {
         return res.status(200).json({ response: 'No deals.' })
       }
       const { data } = deals
@@ -17,7 +17,7 @@ module.exports = {
   async getWonDeals (req, res) {
     try {
       const deals = await getDealsByStatus('won')
-      if (!deals.data) {
+      if (!deals) {
         return res.status(200).json({ response: 'No deals with this status.' })
       }
       const { data } = deals
