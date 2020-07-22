@@ -7,5 +7,8 @@ module.exports = {
   },
   getDealsByStatus (status) {
     return axios(request('deals', { status: status })).then(({ data }) => data)
+  },
+  getDealsProducts (id) {
+    return axios(request(`deals/${id}/products`)).then(({ data }) => data)
   }
 }
