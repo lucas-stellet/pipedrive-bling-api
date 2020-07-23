@@ -1,6 +1,5 @@
 const convert = require('xml-js')
 const moment = require('moment')
-const fs = require('fs')
 
 module.exports = {
   convertToXML (data) {
@@ -9,7 +8,7 @@ module.exports = {
     })
     return xml
   },
-  convertDate (date) {
-    return moment(date).format('DD/MM/YYYY')
+  convertDate (date, format) {
+    return moment(date).format(format)
   }
 }
