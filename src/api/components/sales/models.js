@@ -1,4 +1,19 @@
 const mongoose = require('mongoose')
-const schema = require('./schema')
 
-module.exports = mongoose.model('sale', schema)
+const saleSchema = new mongoose.Schema({
+  amount: {
+    type: Number,
+    trim: true
+  },
+  date: {
+    type: String,
+    trim: true
+  }
+},
+{
+  timestamps: true
+})
+
+const Sale = mongoose.model('Sale', saleSchema)
+
+module.exports = Sale
