@@ -1,7 +1,6 @@
 const { Schema } = require('mongoose')
 
 module.exports = new Schema({
-  internalObservation: String,
   date: Date,
   saler: String,
   paymentValue: Number,

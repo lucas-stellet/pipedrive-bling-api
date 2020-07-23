@@ -1,9 +1,9 @@
 const { Router } = require('express')
-const { createOrders } = require('./controller')
+const { getSales } = require('./controller')
 
 const router = Router()
 
 router
-  .post('/createOrders', createOrders)
+  .post('/sales', getSales)
 
 exports.router = router

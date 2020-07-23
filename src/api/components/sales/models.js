@@ -1,4 +1,4 @@
 const mongoose = require('mongoose')
 const schema = require('./schema')
 
-module.exports = mongoose.model('DealsToOrders', schema)
+module.exports = mongoose.model('sale', schema)
