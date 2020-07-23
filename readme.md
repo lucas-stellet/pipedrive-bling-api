@@ -3,7 +3,7 @@
 
 ---
 
-<h1 id="pipedrive-bling-api">Pipedrive para Bling API</h1>
+<h1 id="pipedrive-bling-api">Pipedrive-Bling API</h1>
 <p>API de integração que criar pedidos no Bling de acordo com os acordos fechados na plataforma Pipedrive.</p>
 <h2 id="como-utilizar">Como utilizar</h2>
 <ul>
