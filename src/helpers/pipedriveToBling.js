@@ -1,10 +1,9 @@
 const { getDealsProducts } = require('../api/components/deals/services/index')
-const { convertDate, convertToXML } = require('../helpers/convertData')
+const { convertToXML } = require('../helpers/convertData')
 
 exports.serializeDeals = (deals) => {
   const formattedDeals = deals.map((deal) => {
     return {
-      data: convertDate(deal.add_time),
       id: deal.id,
       cliente: {
         nome: deal.person_id.name,

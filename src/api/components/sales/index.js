@@ -4,6 +4,6 @@ const { getSales } = require('./controller')
 const router = Router()
 
 router
-  .post('/sales', getSales)
+  .get('/', getSales)
 
 exports.router = router
