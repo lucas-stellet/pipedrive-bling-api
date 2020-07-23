@@ -2,12 +2,13 @@ const { bling } = require('../../../../config/tokensApi')
 
 const apiEndpoint = 'https://bling.com.br/Api/v2'
 
-module.exports = (urlObject) => {
+module.exports = (method, urlObject, xml) => {
   return {
-    method: 'get',
+    method,
     url: `${apiEndpoint}/${urlObject}/json`,
     params: {
-      apikey: bling
+      apikey: bling,
+      xml
     }
   }
 }
