@@ -4,7 +4,7 @@
 ---
 
 <h1 id="pipedrive-bling-api">Pipedrive-Bling API</h1>
-<p>API de integração que criar pedidos no Bling de acordo com os acordos fechados na plataforma Pipedrive.</p>
+<p>API de integração que cria pedidos no Bling de acordo com os acordos fechados na plataforma Pipedrive.</p>
 <h2 id="como-utilizar">Como utilizar</h2>
 <ul>
 <li>Configure o arquivo <code>env.example</code> com as informações do banco de dados, pipedrive token e bling api token.</li>
