@@ -8,6 +8,10 @@ const saleSchema = new mongoose.Schema({
   date: {
     type: String,
     trim: true
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now()
   }
 },
 {
