@@ -5,8 +5,8 @@ const sales = require('./components/sales').router
 
 const router = Router()
 
-router.use('/pipedrive', deals)
-router.use('/bling', orders)
-router.use('/sales', sales)
+router.get('/pipedrive', deals)
+router.get('/bling', orders)
+router.get('/sales', sales)
 
-exports.router = router
+exports.router = app => app.use(router)
