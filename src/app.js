@@ -1,28 +1,18 @@
 require('dotenv').config()
 
 const express = require('express')
+const cors = require('cors')
 
-const mongoose = require('mongoose')
-mongoose.connect(process.env.DB_URI, {
-  useFindAndModify: false,
-  useCreateIndex: true,
-  useUnifiedTopology: true,
-  useNewUrlParser: true
-})
-  .then(() => {
-    console.log('Mongo connected')
-  })
-  .catch(err => console.log(err))
+const mongoose = require('./database')
 
-const { router } = require('./api')
+require('./api')(app)
 
 const app = express()
 
 const port = process.env.PORT ? process.env.PORT : 3000
 
 app.use(express.json())
-
-app.use('/api', router)
+app.use(cors())
 
 app.listen(port, (err) => {
   if (err) {
